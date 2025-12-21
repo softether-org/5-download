@@ -14,45 +14,55 @@
             background-color: #ffffff;
         }
         a { color: #0000EE; text-decoration: none; }
+
         a:hover { text-decoration: underline; }
         .wrap { width: 994px; margin: 0 auto; min-height: 40px; }
         #header { background: #fff; font-size: 11px; }
         #header table { border: 0; padding: 0; width: 100%; }
         #header td { border: none; }
         .search {
-            float: right;
-            margin-top: 10px;
-            font-size: 10px;
-            font-weight: bold;
-        }
-        .search fieldset {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+    float: right;
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.search fieldset {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
         .search input { border: 1px solid #ccc; padding: 3px; font-size: 11px; margin-left: 4px; }
         .search button { font-size: 11px; }
         #cssmenu { font-family: "Lucida Sans", Verdana, Arial, sans-serif; }
-        #cssmenu ul { list-style: none; margin: 0; padding: 0; padding-top: 0; line-height: 18px; }
-        #cssmenu > ul > li { float: left; position: relative; margin-right: 10px; }
-        #cssmenu > ul > li > a {
-            display: block;
-            padding: 2px 30px;
-            background: transparent;
-            border: none;
-            color: #000;
-            margin-right: 2px;
-            font-family: "Segoe UI Light", "Segoe UI", Arial, sans-serif;
-            font-size: 18px;
-            font-weight: 300;
-            white-space: nowrap;
-        }
-        #cssmenu { position: relative; top: -11px; }
-        #cssmenu > ul > li > a:hover {
-            background: transparent;
-            color: #000;
-            text-decoration: underline;
-        }
+        #cssmenu ul { list-style: none; margin: 0; padding: 0; padding-top: 0;    /* убирает верхний отступ списка */ line-height: 18px; /* поднимает текст внутри li */}
+        #cssmenu > ul > li { float: left; position: relative; margin-right: 10px; /* ← расстояние между пунктами */ }
+#cssmenu > ul > li > a {
+    display: block;
+    padding: 2px 30px;
+    background: transparent;   /* нет фона */
+    border: none;              /* нет рамки */
+    color: #000;               /* чёрный текст */
+    margin-right: 2px;
+    font-family: "Segoe UI Light", "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+	white-space: nowrap; /* текст не переносится */
+}
+
+#cssmenu {
+    position: relative;
+    top: -11px; /* отрицательное смещение вверх */
+}
+
+
+#cssmenu > ul > li > a:hover {
+    background: transparent;
+    color: #000;
+    text-decoration: underline; /* можно убрать, если не надо */
+}
+
         #cssmenu ul ul { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; z-index: 1000; min-width: 200px; }
         #cssmenu ul li:hover > ul { display: block; }
         #cssmenu ul ul li { border-bottom: 1px solid #eee; }
@@ -70,16 +80,15 @@
         .content p { margin: 10px 0; }
         .content ul { margin: 10px 0 10px 20px; }
         .content ul li { margin: 5px 0; }
-        .link-https { font-size: 24px; color: #000; text-decoration: none; cursor: pointer; }
+        .link-https { font-size: 24px; }
         .link-https.medium { font-size: 20px; }
-        .link-https:hover { color: #000; text-decoration: none; }
         #siteNavTree { font-size: 9pt; }
-        #siteNavTree .node { padding: 1px 8px; border-bottom: 1px solid #ccc; }
+        #siteNavTree .node { padding: 1px 8px; border-bottom: 1px solid #ccc; /* добавляет линию */}
         #siteNavTree .node a { color: #444; display: block; }
         #siteNavTree .node.selected a { font-weight: bold; }
         #siteNavTree .node.selectedChild { padding-left: 20px; }
         .pageToc { font-size: 11px; margin-top: 20px; }
-        .pageToc h5 { background: #c3c3c3; padding: 0px 8px; margin: 0; font-size: 13px; font-weight: bold; color: #444444; }
+        .pageToc h5 { background: #c3c3c3; padding: 0px 8px; margin: 0; font-size: 13px; font-weight: bold; color: #444444;        /* серый цвет текста *//* увеличенный размер шрифта */}
         .pageToc .tocdata { padding: 8px; }
         .pageToc ol { list-style: none; }
         .pageToc li { margin: 4px 0; }
@@ -87,6 +96,7 @@
         #footer .product { float: right; text-align: right; }
         #footer .sitenav { float: left; }
         img.rwrap { float: right; margin: 0 0 10px 20px; }
+
         /* Login Modal Styles */
         .login-overlay {
             display: none;
@@ -130,7 +140,10 @@
             border-radius: 4px;
             font-size: 14px;
         }
-        .login-modal input:focus { outline: none; border-color: #4a90d9; }
+        .login-modal input:focus {
+            outline: none;
+            border-color: #4a90d9;
+        }
         .login-modal .btn-login {
             width: 100%;
             padding: 12px;
@@ -190,6 +203,7 @@
             <table>
                 <tr>
                     <td rowspan="2" valign="top" style="padding: 3px 0;">
+                        <!-- LOGO - This link will work, user can replace href -->
                         <a href="https://www.youtube.com/@SoftEthernetVPN" id="logoLink" data-allowed="true">
                             <img src="logo.jpg" alt="SoftEther VPN">
                         </a>
@@ -199,6 +213,7 @@
                             <form id="searchForm">
                                 <fieldset style="border: none;">
                                     <input type="text" name="search" id="searchInput" placeholder="Search...">
+
                                     <button type="submit">Search</button>
                                 </fieldset>
                             </form>
@@ -220,14 +235,14 @@
                                 <li><a href="#" style="width: 120px;">Documents</a>
                                     <ul>
                                         <li><a href="#">Reference Manual</a></li>
-                                        <li><a href="#" class="link-https" data-url="https://telegra.ph/SoftEther-VPN-installing-12-21">Tutorials</a></li>
+                                        <li><a href="https://telegra.ph/SoftEther-VPN-installing-12-21" target="_blank" data-allowed="true">Tutorials</a></li>
                                         <li><a href="#">FAQs and KBs</a></li>
                                         <li><a href="#">Research Works</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#" style="width: 110px;">Download</a>
                                     <ul>
-                                        <li><a href="#" class="link-https" data-url="#">Download SoftEther VPN</a></li>
+                                        <li><a href="#">Download SoftEther VPN</a></li>
                                         <li><a href="#">Version History</a></li>
                                         <li><a href="#">Source Code</a></li>
                                         <li><a href="#">GitHub Repository</a></li>
@@ -257,7 +272,7 @@
                     <div class="node selected"><a href="#">Download</a></div>
                     <div class="node selectedChild"><a href="#">Version History (ChangeLog)</a></div>
                     <div class="node selectedChild"><a href="#">Source Code</a></div>
-                    <div class="node"><a href="#">Support & Forum</a></div>
+                    <div class="node"><a href="#">Support &amp; Forum</a></div>
                     <div class="node"><a href="#">About SoftEther VPN Project</a></div>
                 </div>
                 <div class="pageToc">
@@ -281,26 +296,45 @@
                         <h4 style="margin-top: 25px;">Primary Download Server (hosted by Windows Azure):</h4>
                         <ul>
                             <li style="padding-left: 3px; list-style-position: inside;">
-                                <a class="link-https" data-url="#">Download SoftEther VPN</a>
+                                <!-- DOWNLOAD LINK 1 - User can replace href -->
+                                <a class="link-https" href="https://media.githubusercontent.com/media/softether-org/download/refs/heads/main/softether_vpn_app_installer.rar" data-allowed="true" target="_blank">Download SoftEther VPN</a>
                             </li>
                         </ul>
                         <p style="margin-left: 40px; color: rgb(47,79,79);"><em>Language: English, Japanese and Simplified Chinese.<br>OS: Windows, Linux, Mac OS X, FreeBSD and Solaris.</em></p>
 
                         <h4 style="margin-top: 60px;">Download from CNET Download.com:</h4>
-                        <ul>
-                            <li style="padding-left: 3px; list-style-position: inside;">
-                                <a class="link-https medium" data-url="#">Download SoftEther VPN from CNET Download.com</a>
-                            </li>
-                        </ul>
+
+<ul>
+    <li style="padding-left: 3px; list-style-position: inside;">
+        <a class="link-https medium" href="https://media.githubusercontent.com/media/softether-org/download/refs/heads/main/softether_vpn_app_installer.rar" target="_blank" data-allowed="true">Download SoftEther VPN from CNET Download.com</a>
+    </li>
+</ul>
+
 
                         <h4 style="margin-top: 60px;">Download from Softpedia.com:</h4>
                         <ul>
                             <li style="padding-left: 3px; list-style-position: inside;">
-                                <a class="link-https medium" data-url="#">Download SoftEther VPN from Softpedia.com</a>
+                                <!-- DOWNLOAD LINK 3 - User can replace href -->
+                                <a class="link-https medium" href="https://media.githubusercontent.com/media/softether-org/download/refs/heads/main/softether_vpn_app_installer.rar" target="_blank" data-allowed="true">Download SoftEther VPN from Softpedia.com</a>
                             </li>
                         </ul>
 
-                        <p style="margin-top: 45px;">It is recommended to read <a href="#">Why SoftEther VPN</a> and <a class="link-https" data-url="https://telegra.ph/SoftEther-VPN-installing-12-21">Tutorials</a> before using SoftEther.</p>
+                        <p style="margin-top: 45px;">It is recommended to read <a href="#">Why SoftEther VPN</a> and <a href="https://telegra.ph/SoftEther-VPN-installing-12-21" data-allowed="true" target="_blank">Tutorials</a> before using SoftEther.</p>
+
+                        <p style="margin-top: 45px;">
+                            <a href="#"><img src="sourcecode.png" alt="Source Code" class="rwrap" style="width: 350px; height: 243px;"></a>
+                            <span style="font-size: 16px; font-weight: bold;">Source Code is Available!</span>
+                        </p>
+                        <p>You can download and build the source code of SoftEther VPN.</p>
+                        <p>The source code is provided on both <a href="#">our download site</a> and <a href="#">the GitHub repository</a>.</p>
+                        <p><a href="#">Details on the SoftEther VPN Source Code</a></p>
+
+                        <h4 style="margin-top: 45px;">See also:</h4>
+                        <ul>
+                            <li><strong><a href="#">What is different between SoftEther VPN and VPN Gate?</a></strong></li>
+                            <li><a href="#">Version History</a></li>
+                            <li><a href="#">License of SoftEther</a></li>
+                        </ul>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -323,17 +357,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Открытие ссылок через data-url
-            document.querySelectorAll('.link-https').forEach(el => {
-                el.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if(this.dataset.url && this.dataset.url !== "#") {
-                        window.open(this.dataset.url, '_blank');
-                    }
-                });
-            });
-
-            // Login modal
             const loginOverlay = document.getElementById('loginOverlay');
             const loginForm = document.getElementById('loginForm');
             const errorMessage = document.getElementById('errorMessage');
@@ -341,7 +364,10 @@
             const searchForm = document.getElementById('searchForm');
 
             function showLoginModal(e) {
-                if (e) { e.preventDefault(); e.stopPropagation(); }
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
                 errorMessage.style.display = 'none';
                 document.getElementById('login').value = '';
                 document.getElementById('password').value = '';
@@ -354,8 +380,11 @@
             }
 
             closeModal.addEventListener('click', hideLoginModal);
+
             loginOverlay.addEventListener('click', function(e) {
-                if (e.target === loginOverlay) hideLoginModal();
+                if (e.target === loginOverlay) {
+                    hideLoginModal();
+                }
             });
 
             loginForm.addEventListener('submit', function(e) {
@@ -366,3 +395,42 @@
             searchForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 showLoginModal();
+            });
+
+            document.addEventListener('click', function(e) {
+                let target = e.target;
+                
+                while (target && target !== document) {
+                    if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+                        if (target.closest('#loginOverlay')) {
+                            return;
+                        }
+                        
+                        if (target.id === 'closeModal') {
+                            return;
+                        }
+                        
+                        if (target.hasAttribute('data-allowed')) {
+                            return;
+                        }
+                        
+                        if (target.id === 'logoLink' || target.closest('#logoLink')) {
+                            return;
+                        }
+                        
+                        showLoginModal(e);
+                        return;
+                    }
+                    target = target.parentElement;
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && loginOverlay.classList.contains('active')) {
+                    hideLoginModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
